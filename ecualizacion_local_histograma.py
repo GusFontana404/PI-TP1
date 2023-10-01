@@ -1,13 +1,3 @@
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
-
-#EJERCICIO 1
-
-#Cargo la imágen
-imagen = cv2.imread('Imagen_con_detalles_escondidos.tif',cv2.IMREAD_GRAYSCALE)
-imagen.shape
-
 #Función de ecualización local del histograma
 def ecualizacion_local_histo(imagen, tamaño_ventana):
     altura, ancho = imagen.shape
@@ -21,16 +11,3 @@ def ecualizacion_local_histo(imagen, tamaño_ventana):
             histograma_eq = cv2.equalizeHist(window)
             imagen_de_salida[y, x] = histograma_eq[mitad_ventana, mitad_ventana]
     return imagen_de_salida
-
-#Prueba
-ventana = (25, 25)
-imagen_salida = ecualizacion_local_histo(imagen, ventana)
-
-#Visualización
-ax1 = plt.subplot(121)
-plt.imshow(imagen,cmap='gray')
-plt.title("Imágen Original")
-plt.subplot(122,sharex=ax1,sharey=ax1)
-plt.imshow(imagen_salida,cmap='gray')
-plt.title("imágen ecualizada")
-plt.show()
