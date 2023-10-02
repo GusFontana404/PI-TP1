@@ -1,0 +1,18 @@
+#Ejercicio 1:
+
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Prueba
+ventana = (25, 25)
+imagen_salida = ecualizacion_local_histo(imagen, ventana)
+
+#Visualización
+ax1 = plt.subplot(121)
+plt.imshow(imagen,cmap='gray')
+plt.title("Imágen Original")
+plt.subplot(122,sharex=ax1,sharey=ax1)
+plt.imshow(imagen_salida,cmap='gray')
+plt.title("imágen ecualizada")
+plt.show()
