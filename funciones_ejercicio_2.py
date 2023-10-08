@@ -49,7 +49,6 @@ def contar_caracteres_palabras(array, rango_inicial, rango_final):
     de detección de caracteres y palabras."""
     #Ordeno el array en base a la primer coordenada (x inicial)
     array = array[array[:,0].argsort()]
-    #array = array[2:]
     #Inicializo variables para guardar el total de caracteres y palabras
     x_finales = []
     caracteres = 0
@@ -90,14 +89,14 @@ def validar_formulario(img_formulario):
     Recibe como argumento la imagen del formulario a procesar."""
     #Se crea una instancia de un formulario llamando a la función 'extraer_campos'
     diccionario_formulario = extraer_campos(img_formulario)
-    formulario = {'Nombre y Apellido':'MAL',
-                   'Edad':'MAL',
-                   'Mail':'MAL',
-                   'Legajo':'MAL',
-                   'Pregunta 1':'MAL',
-                   'Pregunta 2':'MAL',
-                   'Pregunta 3':'MAL',
-                   'Comentarios':'MAL'}
+    formulario = {'Nombre y Apellido':None,
+                   'Edad':None,
+                   'Mail':None,
+                   'Legajo':None,
+                   'Pregunta 1':None,
+                   'Pregunta 2':None,
+                   'Pregunta 3':None,
+                   'Comentarios':None}
     #Se itera sobre sobra las claves y valores del diccionario
     for indice_campo, coordenada in diccionario_formulario.items():
         #Se convierte la imagen a binaria 
